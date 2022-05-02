@@ -27,7 +27,7 @@
 
         <style>
             html, body {
-                overflow: hidden;
+                overflow: auto;
                 width: 100%;
                 height: 100%;
                 margin: 0;
@@ -38,6 +38,9 @@
                  text-align:center;
                 font-family: 'Work Sans', sans-serif;           
              }
+             img{
+                 margin-left: 100px;
+             }
 
             #renderCanvas {
                 width: 70%;
@@ -47,6 +50,7 @@
                 text-align: center;
                 margin-left: 200px;
             }
+       
   .lorem-ipsum-dolor-sit-amet-co {
     margin-left: 20px;
     margin-right: 20px;
@@ -74,8 +78,6 @@ their height and diameter.
 
     <script>
         var canvas = document.getElementById("renderCanvas");
-
-
 
         var startRenderLoop = function (engine, canvas) {
             engine.runRenderLoop(function () {
@@ -127,7 +129,6 @@ their height and diameter.
             }
             
             // scatterPlot.draw(points);
-        
             //GUI
             var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("ui1");
             var panel3 = new BABYLON.GUI.StackPanel();
@@ -145,6 +146,8 @@ their height and diameter.
             header.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
             header.paddingTop = "10px";
             panel3.addControl(header); 
+
+            
         
             // var button1 = getBut("plain color");
             // button1.onPointerUpObservable.add(function() {
@@ -349,6 +352,11 @@ their height and diameter.
         
                 const planeTexture = new BABYLON.DynamicTexture("dynamic texture", 512, this.scene, true, BABYLON.DynamicTexture.TRILINEAR_SAMPLINGMODE);
                 planeTexture.drawText(text, null, null, "normal 240px Helvetica", "black", "transparent", true);
+
+                
+
+  
+                
         
                 var material = new BABYLON.StandardMaterial("outputplane", this.scene);
                 material.emissiveTexture = planeTexture;
@@ -406,7 +414,6 @@ their height and diameter.
         			
                     if(use_objects){
                         var sphere = BABYLON.Mesh.CreateSphere("sphere", 16, 1, this.scene); 
-                        BABYLON.Mesh.Cre
                         var SPS = new BABYLON.SolidParticleSystem('SPS', this.scene);
                         SPS.addShape(sphere, points.length);
                         SPS.buildMesh();
@@ -617,7 +624,12 @@ their height and diameter.
 
         });
     </script>
-    <h2>Testing 2</h2>
-    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+    <h2>Histograms to compare DBH and height of tree to CO2 avoidance</h2>
+    <div id="check1">
+    <img src="https://raw.githubusercontent.com/aj0109/Visualization/fb63da2edc83887a706d244d4b8a063d5a90511c/Distribution%20of%20Diameter%20of%20UT%20Trees.svg" alt="DBH Impact on trees" width="500" height="400" id="dbhimpactgraph">
+    <img src="https://raw.githubusercontent.com/aj0109/Visualization/d87c03122d4c8a891fc23976d7f96f266a9a0789/Distribution%20of%20Height%20of%20UT%20Trees.svg" alt="Height Impact on trees" width="500" height="400" id="heightimpactgraph">
+    </div>
+
+
 </body>
 </html>
